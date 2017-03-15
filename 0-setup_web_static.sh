@@ -1,7 +1,7 @@
 #!/usr/bin/env bash
 # Sets up nginx
 #sudo apt-get install nginx
-WEBROOT="data/web_static"
+WEBROOT="/data/web_static"
 if [[ ! -e "$WEBROOT/{releases/test/,shared}" ]]; then
 	sudo mkdir -p $WEBROOT/{releases/test/,shared}
 fi
@@ -11,4 +11,4 @@ if [[ ! -e "$WEBROOT/releases/current" ]]; then
 	sudo ln -snf releases/test/ current
 	popd
 fi
-sudo chown -R ubuntu:ubuntu data/
+sudo chown -R ubuntu:ubuntu /data/
