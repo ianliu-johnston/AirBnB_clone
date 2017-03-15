@@ -5,8 +5,10 @@ WEBROOT="data/web_static"
 if [[ ! -e "$WEBROOT/{releases/test/,shared}" ]]; then
 	sudo mkdir -p $WEBROOT/{releases/test/,shared}
 fi
-cd $WEBROOT
-echo "Holberton School test page" | sudo tee releases/test/index.html
-sudo ln -sf releases/test/ current
-cd -
-chown -R ubuntu:ubuntu /data/
+echo "Holberton School test page" | sudo tee $WEBROOT/releases/test/index.html
+if [[ ! -e "$WEBROOT/releases/current" ]]; then
+	cd $WEBROOT
+	sudo ln -snf releases/test/ current
+	cd -
+fi
+sudo chown -R ubuntu:ubuntu data/
