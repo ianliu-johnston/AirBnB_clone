@@ -7,8 +7,8 @@ if [[ ! -e "$WEBROOT/{releases/test/,shared}" ]]; then
 fi
 echo "Holberton School test page" | sudo tee $WEBROOT/releases/test/index.html
 if [[ ! -e "$WEBROOT/releases/current" ]]; then
-	cd $WEBROOT
+	pushd $WEBROOT
 	sudo ln -snf releases/test/ current
-	cd -
+	popd
 fi
 sudo chown -R ubuntu:ubuntu data/
