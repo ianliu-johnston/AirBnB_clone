@@ -8,5 +8,5 @@ pushd $WEBROOT
 sudo ln -snf releases/test/ current
 popd
 sudo chown -R ubuntu:ubuntu /data/
-sed -i '37i\\tlocation /hbnb_static/ {\n\t\talias /data/web_static/releases/current;\n\t}' /etc/nginx/sites-available/default
+sudo sed -i '37i\\tlocation /hbnb_static/ {\n\t\talias /data/web_static/releases/current;\n\t}' /etc/nginx/sites-available/default
 sudo service nginx restart
