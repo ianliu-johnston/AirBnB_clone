@@ -8,5 +8,7 @@ pushd $WEBROOT
 sudo ln -snf releases/test/ current
 popd
 sudo chown -R ubuntu:ubuntu /data/
-wget
+sudo cp /etc/nginx/sites-available/default /etc/nginx/sites-available/default.bak1
+INSERT=$(grep -n "server_name" /etc/nginx/sites-available/default | cut -d ':' -f1 | head -1)
+sudo sed -i "$INSERT ilocation /hbnb_static {\n\t\talias /data/web_static/current;\n\t}\n" /etc/nginx/sites-available/default
 sudo service nginx restart
