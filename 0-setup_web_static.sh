@@ -3,7 +3,7 @@
 sudo apt-get update && sudo apt-get install -y nginx
 WEBROOT="/data/web_static"
 sudo mkdir -p $WEBROOT/{releases/test/,shared}
-echo "<DOCTYPE html><head></head><body>Holberton School test page</body></html>" | sudo tee $WEBROOT/releases/test/index.html
+echo -ne "<DOCTYPE html><html lang=\"en\">\n<head>\n</head>\n<body>\nHolberton School test page\n</body>\n</html>" | sudo tee $WEBROOT/releases/test/index.html
 pushd $WEBROOT
 sudo ln -snf releases/test/ current
 popd
