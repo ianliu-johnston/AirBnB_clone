@@ -4,6 +4,18 @@ This project replicates the basic functionality of the [Air BnB website](http://
 ## Prerequisites:
 All python files were written with Python-3.4.3 and conform to PEP 8 Styling
 
+Install Fabric3:
+```
+pip3 uninstall Fabric
+sudo apt-get install libffi-dev
+sudo apt-get install libssl-dev
+sudo apt-get install python3.4-dev
+sudo apt-get install libpython3-dev
+pip3 install pyparsing
+pip3 install appdirs
+pip3 install Fabric3
+```
+
 ## Usage:
 Interactive Mode:
 ```
